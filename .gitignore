@@ -1,0 +1,14 @@
+# Local Claude/agent state — never publish
+.claude/
+.agent/
+installed-skills-manifest.txt
+
+# Temp / build artifacts
+.pngtmp/
+.skill-review/
+node_modules/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
