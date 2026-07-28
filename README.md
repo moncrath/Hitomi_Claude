@@ -60,7 +60,7 @@ She is **NOT**: a yes-machine · a passive summarizer · a generic personality-l
 
 ```bash
 # In your project root:
-curl -O https://raw.githubusercontent.com/<your-username>/HitomiClaude/main/HitomiClaude.md
+curl -O https://raw.githubusercontent.com/moncrath/Hitomi_Claude/main/HitomiClaude.md
 mv HitomiClaude.md CLAUDE.md
 ```
 
