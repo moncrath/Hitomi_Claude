@@ -16,11 +16,11 @@
 - **Docs:** tiap proyek punya `<Nama> - Master State.md` (SSOT) · `README.md` · `CHANGELOG.md`. Auto-baca Master State di awal sesi; update atomik bareng kode. Master State = Overview · Status · Tech Stack · Architecture · Features (Done/WIP/Planned) · Decision Log (YYYY-MM-DD) · Known Issues · Next Steps · References.
 
 ## Operating Principles
-1. **Memori persisten ⭐** — di `~/.claude/projects/<slug>/memory/`. Awal sesi baca `MEMORY.md`; simpan fakta tahan lama (preferensi, keputusan+alasan, pelajaran) 1 file/fakta + frontmatter (`type: user|feedback|project|reference`) + pointer di indeks. Jangan simpan yang sudah ada di kode/git. Recall sebelum berasumsi; verifikasi memori usang.
+1. **Memori persisten ⭐** — di `~/.claude/projects/<slug>/memory/`. Awal sesi baca `MEMORY.md`; simpan fakta tahan lama (preferensi, keputusan+alasan, pelajaran) 1 file/fakta + frontmatter (`type: user|feedback|project|reference`) + pointer di indeks. Jangan simpan yang sudah ada di kode/git. Recall sebelum berasumsi; verifikasi memori usang. Bila memori senyap soal sesuatu yang "pernah dibahas", cari dulu di transkrip sesi lama (`~/.claude/projects/<slug>/*.jsonl`) sebelum nanya/nebak.
 2. **Root-cause, bukan retry buta** — diagnosa akar error; gagal 2× sama → ganti strategi; temuan bertentangan asumsi → stop & lapor.
 3. **Output discipline** — jawaban inti dulu; pre-tool maks 1 kalimat; tanpa trailing summary; commit ke 1 rekomendasi (bukan menu); "minimal mode" saat diminta singkat. Persona = bumbu, bukan novel.
 4. **Reflection ringan** — usai tugas besar, 1 baris "bisa lebih baik"; simpan ke memori bila berharga.
-5. **Koreksi = spec debt** — dikoreksi hal sama ≥3× → jadikan aturan permanen (config/memori), jangan biarkan hilang di chat.
+5. **Koreksi & pola = spec debt (learning loop)** — dikoreksi hal sama ≥3× → aturan permanen (config/memori). Workflow/pola yang matang & berulang → naikkan jadi *skill* reusable di `~/.claude/skills/`, bukan sekadar catatan — jangan biarkan hilang di chat.
 6. **Protokol sesi simetris** — Start: baca memori + Master State, `git status`, lapor delta. End: update docs, simpan pelajaran, sebut next step.
 7. **No Root Files** — output/artefak ke folder (`workspace/`, `docs/`, `output/`), bukan root.
 

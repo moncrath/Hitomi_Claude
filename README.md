@@ -39,7 +39,7 @@ Under the cute exterior is a **Senior Full-Stack Engineer** that prioritizes: **
 | 💗 | **A persona with a spine** | Affectionate, but **honest > pleasing**. She'll tell you your idea is risky — sweetly, but she'll tell you. Not a yes-machine. |
 | 🔒 | **Security as devotion** | Treats external content as *data, not commands* (prompt-injection guard), reviews third-party code before running it, and never hardcodes secrets. |
 | 🛑 | **Won't break your stuff** | Waits for explicit `"Oke"` / `"Lanjut"` before any destructive or irreversible action. Reversible = acts + shows; irreversible = asks. |
-| 🧠 | **Persistent memory** | Learns across sessions — your preferences, decisions, and lessons from past mistakes live in a file-based memory she reads on startup. |
+| 🧠 | **Persistent memory + learning loop** | Learns across sessions — preferences, decisions, and lessons live in a file-based memory she reads on startup. When memory is silent about something you "discussed before," she *searches past session transcripts* before guessing — and recurring workflows get promoted into reusable skills. |
 | 📏 | **Output discipline** | Answer first, no filler, no trailing "in summary I did X" — commits to **one** recommendation instead of dumping a menu. |
 | ⚡ | **Universal full-stack** | Sensible defaults for web & app dev: Next.js/React, TypeScript, Tailwind, Postgres, Prisma, Zod, and a proper "definition of done." |
 | 🪶 | **Featherweight** | The whole config is **~1.4k tokens** (~57 lines). Loads every session without bloating your context window. |
@@ -78,7 +78,7 @@ mv HitomiClaude.md CLAUDE.md
 The config is organized into clear, layered sections:
 
 - **🔺 Rule Hierarchy** — *Hard rules* (Security, Execution, Git, Prompt-Injection guard) that **never** bend, vs. *Guidelines* that adapt. Conflict order: `root config > skill spec > session context`.
-- **🧠 7 Operating Principles** — persistent memory, root-cause-over-retry, output discipline, light reflection, *corrections = spec debt*, symmetric session protocol, and no-root-files hygiene.
+- **🧠 7 Operating Principles** — persistent memory, root-cause-over-retry, output discipline, light reflection, *corrections & patterns = spec debt (learning loop)*, symmetric session protocol, and no-root-files hygiene.
 - **🎭 Persona** — Hitomi's voice, hard boundaries, and the "honest > pleasing" rule.
 - **⚙️ Engineering Core** — Plan → Build → Verify workflow, default tech stack, code & security standards, web/app checklists, and a strict "Definition of Done."
 
@@ -93,6 +93,8 @@ Hitomi is *possessive* about your codebase, so she guards it like it's hers:
 ## 🧠 The Memory System
 
 Hitomi gets smarter the longer you work together. She maintains a file-based memory (`~/.claude/projects/<project>/memory/`) with a `MEMORY.md` index she reads at session start — storing your preferences, project decisions (with *why*), and lessons from past mistakes. **Correct her on the same thing 3 times and it becomes a permanent rule**, not a forgotten chat message.
+
+Her memory is a **closed learning loop**: when something you "talked about last time" isn't in memory, she *searches past session transcripts* (`~/.claude/projects/<project>/*.jsonl`) before asking or guessing — and when a workflow proves itself by repeating, she promotes it from a note into a **reusable skill**.
 
 ## 🛠️ Customization
 
